@@ -6,6 +6,8 @@ import java.lang.reflect.Method;
 /**
  * @author wangdan
  * @date 2021/1/9
+ *
+ * 出现jar包无法加载问题，这是加载自己编译的jar的测试类
  */
 public class HelloClassLoaderTest extends ClassLoader {
 

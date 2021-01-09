@@ -5,6 +5,7 @@ import java.io.*;
 /**
  * @author wangdan
  * @date 2021/1/9
+ * 自己编译HelloTest.xclass
  */
 public class HelloClassDealUtil {
 
