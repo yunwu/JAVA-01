@@ -10,7 +10,7 @@ public class Demo5 {
 
     public static void main(String[] args){
 
-        ExecutorService pool = Executors.newFixedThreadPool(1);
+        ExecutorService pool = ThreadPoolFactory.createPool("test5");
         CompletableFuture<String> future = CompletableFuture.supplyAsync(new Supplier<String>() {
             @Override
             public String get() {
