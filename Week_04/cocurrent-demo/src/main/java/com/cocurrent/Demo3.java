@@ -10,8 +10,7 @@ public class Demo3 {
 
     public static void main(String[] args){
 
-        ExecutorService pool = new ThreadPoolExecutor(1, 1, 600, TimeUnit.SECONDS, new ArrayBlockingQueue<>(10));
-
+        ExecutorService pool = ThreadPoolFactory.createPool("test3");
         Future<String> future = pool.submit(new Callable<String>() {
             @Override
             public String call() throws Exception {

@@ -31,7 +31,7 @@ public class Demo4 {
             }
         });
 
-        ExecutorService pool = Executors.newFixedThreadPool(1);
+        ExecutorService pool = ThreadPoolFactory.createPool("test4");
         try {
             List<Future<String>> results = pool.invokeAll(task);
             for (Future<String> result : results) {
