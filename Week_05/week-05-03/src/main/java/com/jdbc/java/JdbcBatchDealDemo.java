@@ -3,7 +3,7 @@ package com.jdbc.java;
 import java.sql.*;
 
 /**
- * 批处理方式
+ * 批处理方式，
  */
 public class JdbcBatchDealDemo {
 
