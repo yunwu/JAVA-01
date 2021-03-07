@@ -1,6 +1,6 @@
-package V1.read.service;
+package V2.service;
 
-import V1.model.Order;
+import V2.model.Order;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import java.util.List;
  * @author wangdan
  * @date 2021/3/7
  */
-public interface OrderReadService {
+public interface OrderService {
 
     List<Order> getTop100Order();
 }
