@@ -27,7 +27,7 @@ public class DataSourceAspect{
     @Autowired
     private DynamicDataSourceConfig dataSourceConfig;
 
-    @Pointcut("execution(* V2.mapper.*(..)))")
+    @Pointcut("execution(* V2.mapper..*(..)))")
     public void dataSourcePointCut() {
 
     }
