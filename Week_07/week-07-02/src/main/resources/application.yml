@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 9101
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
+# 下面数据待定
+---
+spring:
+  profiles: dev
+  datasource:
+    master:
+      jdbc-url: jdbc:mysql://localhost:3316/mysql_demo?&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.alibaba.druid.proxy.DruidDriver
+      password: 5bfeiuyj
+      username: test
+    slave:
+      jdbc-url: jdbc:mysql://localhost:3326/mysql_demo?&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.alibaba.druid.proxy.DruidDriver
+      password: 5bfeiuyj
+      username: test
