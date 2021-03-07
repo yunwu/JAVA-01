@@ -20,7 +20,7 @@ import javax.sql.DataSource;
  */
 
 @Configuration
-@MapperScan(basePackages = {"V1.mapper"}, sqlSessionFactoryRef = "slaveSqlSessionFactory")
+@MapperScan(basePackages = {"V1.mapper.read"}, sqlSessionFactoryRef = "slaveSqlSessionFactory")
 public class SlaveDatasourceConfig {
 
     @Bean(name = "slave")

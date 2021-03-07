@@ -1,6 +1,6 @@
 package V1.read.service.impl;
 
-import V1.mapper.OrderReadMapper;
+import V1.mapper.read.OrderReadMapper;
 import V1.model.Order;
 import V1.read.service.OrderReadService;
 import org.springframework.beans.factory.annotation.Autowired;

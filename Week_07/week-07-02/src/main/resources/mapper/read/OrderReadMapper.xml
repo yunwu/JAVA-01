@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="V1.mapper.OrderReadMapper">
+<mapper namespace="V1.mapper.read.OrderReadMapper">
   <resultMap id="BaseResultMap" type="V1.model.Order">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="goods_snap_shot_id" jdbcType="BIGINT" property="goodsSnapShotId" />

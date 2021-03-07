@@ -1,4 +1,4 @@
-package V1.mapper;
+package V1.mapper.write;
 
 import V1.model.Order;
 import org.springframework.stereotype.Repository;

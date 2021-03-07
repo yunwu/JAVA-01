@@ -1,6 +1,6 @@
 package V1.write.service.impl;
 
-import V1.mapper.OrderWriteMapper;
+import V1.mapper.write.OrderWriteMapper;
 import V1.model.Order;
 import V1.write.service.OrderWriteService;
 import org.springframework.beans.factory.annotation.Autowired;
