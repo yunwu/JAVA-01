@@ -9,8 +9,6 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
@@ -41,12 +39,12 @@ public class DataSourceAspect{
         ReadOnly clazzAnnotion = (ReadOnly) signature.getDeclaringType().getAnnotation(ReadOnly.class);
         if (ds == null && clazzAnnotion == null) {
             DynamicDataSource.setDataSource("master");
-            log.debug("set datasource is master");
+            log.info("set datasource is master");
         } else {
             //使用随机数字方式获取slave
             int index = (int)(Math.random()*(dataSourceConfig.getSlaveCounts()));
             DynamicDataSource.setDataSource("slave-" + index);
-            log.debug("set datasource is slave-" + index);
+            log.info("set datasource is slave-" + index);
         }
         try {
             return point.proceed();
