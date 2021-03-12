@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * @date 2021/3/7
  */
 @Configuration
-@MapperScan(basePackages = {"V1.mapper.write"}, sqlSessionFactoryRef = "masterSqlSessionFactory")
+@MapperScan(basePackages = {"V1.V3.mapper.write"}, sqlSessionFactoryRef = "masterSqlSessionFactory")
 public class MasterDataSourceConfig {
 
     @Bean(name = "master")
@@ -39,7 +39,7 @@ public class MasterDataSourceConfig {
         bean.setDataSource(dataSource);
 
         //建议xml放到DAO接口一起
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/write/*.xml"));
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:V3.mapper/write/*.xml"));
         //bean.setConfigLocation(new DefaultResourceLoader().getResource("classpath:mybatis/mybatis-config.xml"));
 
         return bean.getObject();

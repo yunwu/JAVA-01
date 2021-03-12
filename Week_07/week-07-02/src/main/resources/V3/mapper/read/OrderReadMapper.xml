@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="V1.mapper.read.OrderReadMapper">
-  <resultMap id="BaseResultMap" type="V1.model.Order">
+<!DOCTYPE V3.mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-V3.mapper.dtd">
+<V3.mapper namespace="V1.V3.mapper.read.OrderReadMapper">
+  <resultMap id="BaseResultMap" type="V1.Order">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="goods_snap_shot_id" jdbcType="BIGINT" property="goodsSnapShotId" />
     <result column="price" jdbcType="DOUBLE" property="price" />
@@ -25,4 +25,4 @@
     select <include refid="Base_Column_List"/>
     from `order` order by id desc limit 100;
   </select>
-</mapper>
+</V3.mapper>

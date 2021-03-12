@@ -16,8 +16,6 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 
 import javax.sql.DataSource;
-import java.io.IOException;
-import java.sql.SQLException;
 import java.util.*;
 
 /**
@@ -90,10 +88,7 @@ public class DynamicDataSourceConfig {
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
-        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
+        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:V3.mapper/*.xml"));
         return sqlSessionFactoryBean.getObject();
     }
-
-
-
 }

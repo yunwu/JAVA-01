@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="V1.mapper.write.OrderWriteMapper">
-  <resultMap id="BaseResultMap" type="V1.model.Order">
+<!DOCTYPE V3.mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-V3.mapper.dtd">
+<V3.mapper namespace="V1.V3.mapper.write.OrderWriteMapper">
+  <resultMap id="BaseResultMap" type="V1.Order">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="goods_snap_shot_id" jdbcType="BIGINT" property="goodsSnapShotId" />
     <result column="price" jdbcType="DOUBLE" property="price" />
@@ -18,7 +18,7 @@
     delete from order
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="V1.model.Order">
+  <insert id="insert" parameterType="V1.Order">
     insert into order (id, goods_snap_shot_id, price, 
       goods_name, `status`, create_time, 
       update_time, deleted)
@@ -26,7 +26,7 @@
       #{goodsName,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="V1.model.Order">
+  <insert id="insertSelective" parameterType="V1.Order">
     insert into order
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -81,7 +81,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="V1.model.Order">
+  <update id="updateByPrimaryKeySelective" parameterType="V1.Order">
     update order
     <set>
       <if test="goodsSnapShotId != null">
@@ -108,7 +108,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="V1.model.Order">
+  <update id="updateByPrimaryKey" parameterType="V1.Order">
     update order
     set goods_snap_shot_id = #{goodsSnapShotId,jdbcType=BIGINT},
       price = #{price,jdbcType=DOUBLE},
@@ -119,4 +119,4 @@
       deleted = #{deleted,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-</mapper>
+</V3.mapper>

@@ -20,7 +20,7 @@ import javax.sql.DataSource;
  */
 
 @Configuration
-@MapperScan(basePackages = {"V1.mapper.read"}, sqlSessionFactoryRef = "slaveSqlSessionFactory")
+@MapperScan(basePackages = {"V1.V3.mapper.read"}, sqlSessionFactoryRef = "slaveSqlSessionFactory")
 public class SlaveDatasourceConfig {
 
     @Bean(name = "slave")
@@ -41,7 +41,7 @@ public class SlaveDatasourceConfig {
         bean.setDataSource(dataSource);
 
         //建议xml放到DAO接口一起
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/read/*.xml"));
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:V3.mapper/read/*.xml"));
         //bean.setConfigLocation(new DefaultResourceLoader().getResource("classpath:mybatis/mybatis-config.xml"));
 
         return bean.getObject();
