@@ -26,4 +26,19 @@ public class OrderController {
         return orderService.getTop100Order();
     }
 
+    @RequestMapping(value = "/orders", method = RequestMethod.POST)
+    public void addOrder() {
+        Order order = Order.builder()
+                .id(System.currentTimeMillis())
+                .goodsName("测试事务")
+                .goodsSnapShotId(2L)
+                .price(219.34)
+                .status(1)
+                .deleted(0)
+                .createTime(new Date())
+                .updateTime(new Date())
+                .build();
+        orderService.insert(order);
+    }
+
 }

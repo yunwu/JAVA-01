@@ -1,5 +1,6 @@
 package V2.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -10,6 +11,7 @@ import java.util.Date;
  * 订单表
  */
 @Data
+@Builder
 public class Order implements Serializable {
     private Long id;
 
@@ -19,13 +21,13 @@ public class Order implements Serializable {
 
     private String goodsName;
 
-    private Byte status;
+    private int status;
 
     private Date createTime;
 
     private Date updateTime;
 
-    private Byte deleted;
+    private int deleted;
 
     private static final long serialVersionUID = 1L;
 }

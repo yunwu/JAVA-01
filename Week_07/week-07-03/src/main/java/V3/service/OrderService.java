@@ -13,5 +13,5 @@ public interface OrderService {
 
     List<Order> getTop100Order();
 
-    void insertOrder(Order order);
+    List<Order> insertOrder(Order order);
 }

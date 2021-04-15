@@ -25,10 +25,10 @@ public class OrderController {
     }
 
     @RequestMapping(value = "/orders", method = RequestMethod.POST)
-    public void insertOrder(){
+    public List<Order> insertOrder() {
         Order order = Order.builder()
                 .id(System.currentTimeMillis())
-                .goodsName("高露洁")
+                .goodsName("苹果")
                 .goodsSnapShotId(2L)
                 .price(219.34)
                 .status(1)
@@ -36,7 +36,7 @@ public class OrderController {
                 .createTime(new Date())
                 .updateTime(new Date())
                 .build();
-        orderService.insertOrder(order);
+        return orderService.insertOrder(order);
     }
 
 }
