@@ -23,9 +23,8 @@ public class OrderServiceImpl implements OrderService {
     private OrderMapper orderMapper;
 
     @Override
+
     public List<Order> getTop100Order() {
-        HintManager hintManager = HintManager.getInstance();
-        hintManager.setPrimaryRouteOnly();
         return orderMapper.getTop100Order();
     }
 
@@ -33,7 +32,8 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional
     @ShardingTransactionType(TransactionType.XA)
-    public void insertOrder(Order order) {
+    public List<Order> insertOrder(Order order) {
         orderMapper.insert(order);
+        return orderMapper.getTop100Order();
     }
 }

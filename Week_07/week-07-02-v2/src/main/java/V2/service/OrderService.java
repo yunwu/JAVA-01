@@ -11,4 +11,7 @@ import java.util.List;
 public interface OrderService {
 
     List<Order> getTop100Order();
+
+
+    void insert(Order order);
 }

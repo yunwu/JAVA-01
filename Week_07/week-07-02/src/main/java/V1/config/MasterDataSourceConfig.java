@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * @date 2021/3/7
  */
 @Configuration
-@MapperScan(basePackages = {"V1.V3.mapper.write"}, sqlSessionFactoryRef = "masterSqlSessionFactory")
+@MapperScan(basePackages = {"V1.mapper.write"}, sqlSessionFactoryRef = "masterSqlSessionFactory")
 public class MasterDataSourceConfig {
 
     @Bean(name = "master")

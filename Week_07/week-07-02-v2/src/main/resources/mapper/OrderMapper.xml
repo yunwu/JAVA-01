@@ -25,15 +25,15 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="V2.model.Order">
-    insert into order (id, goods_snap_shot_id, price, 
-      goods_name, `status`, create_time, 
-      update_time, deleted)
-    values (#{id,jdbcType=BIGINT}, #{goodsSnapShotId,jdbcType=BIGINT}, #{price,jdbcType=DOUBLE}, 
+      insert into `order` (id, goods_snap_shot_id, price,
+                           goods_name, `status`, create_time,
+                           update_time, deleted)
+      values (#{id,jdbcType=BIGINT}, #{goodsSnapShotId,jdbcType=BIGINT}, #{price,jdbcType=DOUBLE},
       #{goodsName,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="V2.model.Order">
-    insert into order
+      insert into `order`
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
